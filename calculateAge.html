@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+ <html>
+     <head> 
+         <script>
+             function fnCalculateAge(){
+
+                var userDateinput = document.getElementById("age").value;  
+                console.log(userDateinput);
+
+                // convert user input value into date object
+                var birthDate = new Date(userDateinput);
+                console.log(" birthDate"+ birthDate);
+
+                // get difference from current date;
+                var difference=Date.now() - birthDate.getTime(); 
+                    
+                var  ageDate = new Date(difference); 
+                var calculatedAge=   Math.abs(ageDate.getUTCFullYear() - 1970);
+                alert(calculatedAge);
+            }
+         </script>  
+
+     </head>
+     <body>
+         <h1>calculate Age</h1>
+         <form >
+             <label for ="Age">Age</label>
+             <input type="date" id="age" />
+             <button type="button" onClick="fnCalculateAge()" >Click</button>
+         </form>
+     </body>
+ </html>
+
+ 
